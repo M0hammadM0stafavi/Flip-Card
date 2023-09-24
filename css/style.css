@@ -1,2 +1,61 @@
 @charset "UTF8";
 @import "/css/cssreset.css";
+
+.flip-card {
+  width: 300px;
+  height: 180px;
+  margin: 50px auto 0 auto;
+  perspective: 500px;
+  text-align: center;
+}
+
+.flip-card .person {
+  width: 100%;
+  height: 100%;
+  border-radius: 2%;
+  box-shadow: 1px 1px 3px #555;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  box-shadow: 1px 1px 3px #555;
+}
+
+.flip-card-back h4 {
+  margin-top: 60px;
+}
+
+.social {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.social li {
+  display: inline-block;
+}
+
+.social li img {
+  width: 20px;
+  height: 20px;
+}
